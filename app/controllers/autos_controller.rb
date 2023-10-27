@@ -6,7 +6,7 @@ class AutosController < ApplicationController
     authorize_request(["cliente"])
   end 
   #usuario Administrador
-  before_action only: [:show, :new, :edit, :create, :update, :destroy] do
+  before_action only: [:index, :show, :new, :edit, :create, :update, :destroy] do
     authorize_request(["admin"])
   end
 
@@ -14,21 +14,32 @@ class AutosController < ApplicationController
   def index
     @autos = Auto.all
     @pagy, @autos = pagy(Auto.all)
+    if params[:auto].present?
+      @autos = @autos.search_full_text(params[:Precio_por_dia, :modelo_de_auto])
+      end
   end
 
   # GET /autos/1 or /autos/1.json
   def show
     @autos = Auto.all
     @marca = Marca.all
+    if params[:auto].present?
+      @autos = @autos.search_full_text(params[:id, :Precio_por_dia, :modelo_de_auto])
+      end
   end
 
   # GET /autos/new
   def new
     @auto = Auto.new
+    @autos = Auto.all
     @bateria = Baterium.all
     @marca = Marca.all
     @tecnologia = Tecnologium.all
     @carracteristica = Carracteristica.all
+    @pagy, @autos = pagy(Auto.all)
+    if params[:auto].present?
+      @autos = @autos.search_full_text(params[:id, :Precio_por_dia, :modelo_de_auto])
+      end
   end
 
   # GET /autos/1/edit

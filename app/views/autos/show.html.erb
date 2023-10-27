@@ -7,4 +7,5 @@
   <%= link_to "Regresar", autos_path %>
 
   <%= button_to "Eliminar", @auto, method: :delete %>
+  <%== pagy_nav(@pagy) if @pagy.pages > 2 %>
 </div>

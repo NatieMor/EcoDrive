@@ -20,7 +20,6 @@
             <a class="nav-link active" href="<%= terminos_condiciones_index_path %>" aria-current="page">Terminos y Condiciones <span
                 class="visually-hidden"></span></a>
           </li>
-
           <% if user_signed_in? %>  
             <li class="nav-item">
               <a class="nav-link" href="<%= autos_path %>"> Autos </a>
@@ -28,7 +27,7 @@
             <%end%>
             <% if user_signed_in? %> 
             <li class="nav-item">
-              <a class="nav-link" href="<%= new_auto_path %>"> nuevo Autos </a>
+              <a class="nav-link" href="<%= autos_path %>"> nuevo Autos </a>
             </li>
             <%end%>
   
@@ -64,11 +63,20 @@
       </div>
     </div>
   </nav>
-  
-  <% if notice.present? %>
-    <p class="notice alert alert-warning" role="alert">
-      <%= notice %>
-    </p>
-    <% end %>
+  <%= form_with url: autos_path, method: :get do |form| %>
+    <!-- Cuadro de búsqueda-->
+    <div class="card mb-2">
+      <div class="card-body">
+        <div class="input-group">
+          <%= form.text_field :buscar, class: "form-control", placeholder: "Buscar ", value: @consulta %>
+          <%= form.submit 'Buscar', class: "btn btn-outline-primary" %>
+        </div>
+      </div>
+    </div>
+    <%end%>
 
-  
+<% if notice.present? %>
+  <p class="notice alert alert-warning" role="alert">
+    <%= notice %>
+  </p>
+<% end %>

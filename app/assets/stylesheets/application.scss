@@ -187,10 +187,12 @@ CSS STRUCTURE:
   --------------------------------------------------------------*/
   h1,
   h2,
-  h3,
+  h3 {
+    font-family: var(--heading-font);
+  }
   h4,
   h5 {
-    font-family: var(--heading-font);
+    font-family: var(--body-font);
   }
   
   /* - Section width
@@ -387,7 +389,7 @@ CSS STRUCTURE:
     height:100%;  
     position:fixed;
     z-index:20;
-    background:#ece7e1;
+    background:#ece3e1;
     display: flex;
     justify-content: center;
     align-items: center;

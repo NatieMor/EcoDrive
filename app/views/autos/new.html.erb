@@ -1,9 +1,9 @@
 <h1>Nuevo auto</h1>
 
 <%= render "form", auto: @auto %>
-
+<%== pagy_nav(@pagy) if @pagy.pages > 2 %>
 <br>
 
 <div>
-  <%= link_to "REGRESAR", autos_path %>
+  <%= link_to "REGRESAR", autos_path, class:"btn btn-primary" %>
 </div>
