@@ -25,7 +25,7 @@ import "bootstrap"
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-Cuenta administrador : 0
+rol cliente : 0
+rol administrador : 1
 
 * ...
