@@ -793,12 +793,12 @@ CSS STRUCTURE:
   .navbar-nav .nav-item a.nav-link.active,
   .navbar-nav .nav-item a.nav-link:focus,
   .navbar-nav .nav-item a.nav-link:hover {
-    color: var(--bs-primary);
+    color: var(--bs-gray-200);
   }
   
   .dropdown-item:focus,
   .dropdown-item:hover {
-    background-color: var(--bs-secondary);
+    background-color: var(--bs-primary);
   }
   
   /*------------ Offcanvas -------------- */

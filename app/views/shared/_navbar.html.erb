@@ -10,29 +10,19 @@
         <span class="navbar-toggler-icon"></span>
       </button>
   
-      <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <div class="collapse navbar-collapse te" id="collapsibleNavId">
         <ul class="navbar-nav me-auto mt-2 mt-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" href="nosotros/index" aria-current="page">Sobre nosotros <span
-                class="visually-hidden">(current)</span></a>
+            <a class="nav-link active" href="/" aria-current="page"> Sobre nosotros <span
+                class="visually"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="terminos_condiciones/index" aria-current="page">Terminos y TerminosCondiciones <span
-                class="visually-hidden">(current)</span></a>
+            <a class="nav-link active" href="<%= terminos_condiciones_index_path %>" aria-current="page">Terminos y Condiciones <span
+                class="visually-hidden"></span></a>
           </li>
-          <% if user_signed_in? %>
+          <% if user_signed_in? %>  
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href=""> welcome</a>
-            </li>
-  
-            <li class="nav-item">
-              <a class="nav-link" href=""> Autos </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">Mascotas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">Administración</a>
+              <a class="nav-link" href="<%= new_auto_path %>"> nuevo Autos </a>
             </li>
             <%end%>
   

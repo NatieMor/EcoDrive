@@ -1,5 +1,5 @@
 class AutosController < ApplicationController
-  before_action :set_auto, only: %i[ show edit update destroy ]
+  before_action :set_auto, only: %i[ :show, :new, :edit, :create, :update, :destroy ]
 
    #usuario cliente
    before_action only: [:index, :show] do
@@ -18,6 +18,7 @@ class AutosController < ApplicationController
 
   # GET /autos/1 or /autos/1.json
   def show
+    @autos = Auto.all
   end
 
   # GET /autos/new
