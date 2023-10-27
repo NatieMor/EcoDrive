@@ -1,9 +1,19 @@
 class AutosController < ApplicationController
   before_action :set_auto, only: %i[ show edit update destroy ]
 
+   #usuario cliente
+   before_action only: [:index, :show] do
+    authorize_request(["cliente","admin"])
+  end 
+  #usuario Administrador
+  before_action only: [:show, :new, :edit, :create, :update, :destroy] do
+    authorize_request(["admin"])
+  end
+
   # GET /autos or /autos.json
   def index
     @autos = Auto.all
+    @pagy, @autos = pagy(Auto.all)
   end
 
   # GET /autos/1 or /autos/1.json
@@ -25,7 +35,7 @@ class AutosController < ApplicationController
 
     respond_to do |format|
       if @auto.save
-        format.html { redirect_to auto_url(@auto), notice: "Auto was successfully created." }
+        format.html { redirect_to auto_url(@auto), notice: "Auto se creo exitosamento." }
         format.json { render :show, status: :created, location: @auto }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +48,7 @@ class AutosController < ApplicationController
   def update
     respond_to do |format|
       if @auto.update(auto_params)
-        format.html { redirect_to auto_url(@auto), notice: "Auto was successfully updated." }
+        format.html { redirect_to auto_url(@auto), notice: "Auto fue actualizado." }
         format.json { render :show, status: :ok, location: @auto }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +62,7 @@ class AutosController < ApplicationController
     @auto.destroy
 
     respond_to do |format|
-      format.html { redirect_to autos_url, notice: "Auto was successfully destroyed." }
+      format.html { redirect_to autos_url, notice: "Auto fue exitosamente eliminado." }
       format.json { head :no_content }
     end
   end
