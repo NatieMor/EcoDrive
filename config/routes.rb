@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :autos
   get 'terminos_condiciones/index'
   get 'nosotros/index'
   #get 'inicio/index'

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  modelo_de_auto: MyString
+  Rango: MyString
+  Precio_por_dia: MyString
+  Año_fabricacion: 2023-10-26
+  marca: one
+  carracteristica: one
+
+two:
+  modelo_de_auto: MyString
+  Rango: MyString
+  Precio_por_dia: MyString
+  Año_fabricacion: 2023-10-26
+  marca: two
+  carracteristica: two

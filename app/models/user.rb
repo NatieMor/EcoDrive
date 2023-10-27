@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
     enum :roles, [:cliente, :admin]
+    validates :email, presence: true
 end

@@ -29,3 +29,6 @@ rol cliente : 0
 rol administrador : 1
 
 * ...
+
+bateria esta en singular como baterium
+tecnologia esta como singular tecnologium

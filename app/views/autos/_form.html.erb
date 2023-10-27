@@ -1,0 +1,47 @@
+<%= form_with(model: auto) do |form| %>
+  <% if auto.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(auto.errors.count, "error") %> prohibited this auto from being saved:</h2>
+
+      <ul>
+        <% auto.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :modelo_de_auto, style: "display: block" %>
+    <%= form.text_field :modelo_de_auto %>
+  </div>
+
+  <div>
+    <%= form.label :Rango, style: "display: block" %>
+    <%= form.text_field :Rango %>
+  </div>
+
+  <div>
+    <%= form.label :Precio_por_dia, style: "display: block" %>
+    <%= form.text_field :Precio_por_dia %>
+  </div>
+
+  <div>
+    <%= form.label :Año_fabricacion, style: "display: block" %>
+    <%= form.date_field :Año_fabricacion %>
+  </div>
+
+  <div>
+    <%= form.label :marca_id, style: "display: block" %>
+    <%= form.text_field :marca_id %>
+  </div>
+
+  <div>
+    <%= form.label :carracteristica_id, style: "display: block" %>
+    <%= form.text_field :carracteristica_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
