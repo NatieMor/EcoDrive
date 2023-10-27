@@ -3,12 +3,45 @@
 <h1>Autos</h1>
 
 <div id="autos">
-  <% @autos.each do |auto| %>
-    <%= render auto %>
-    <p>
-      <%= link_to "Show this auto", auto %>
-    </p>
-  <% end %>
-</div>
+  <div class="btn">
+    <%= link_to "Nuevo auto", new_auto_path %>
+  </div>
+<br>
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+<div class="table-responsive">
 
-<%= link_to "New auto", new_auto_path %>
+<table class=" table">
+    <thead>
+      <tr>
+        <th scope="col"> Modelo de auto</th>
+        <th scope="col"> Marca </th>
+        <th scope="col">Carracteristica</th>
+        <th scope="col">Año de fabricación</th>
+        <th scope="col">Rango (Km) </th>
+        <th scope="col">Precio por día </th>
+        <th scope="col"> Imagen </th>
+        <th scope="col"> Acción </th>
+      </tr>
+    </thead>
+<hr>
+<tbody>
+  <% @autos.each do |auto| %>
+    <tr>
+    <%= render auto %>
+    <td>
+    <div class="btn-group" role="group">
+          <%= link_to "Show this auto", auto, class:"btn btn-info m-1" %>
+    </div>
+     <% end %>
+</div>
+</tbody>
+  </table>
+  </section>
+
+<br>
+
+<p style="color: green"><%= notice %></p>
+
+
+
+

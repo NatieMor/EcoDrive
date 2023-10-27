@@ -1,32 +1,33 @@
 <div id="<%= dom_id auto %>">
-  <p>
-    <strong> Modelo de auto:</strong>
-    <%= auto.modelo_de_auto %>
-  </p>
+<td scope="row">
+<%= auto.modelo_de_auto %>
+</td>
+<td>
+<%= auto.marca_id %>
+</td>
+<td>
+<%= auto.carracteristica_id %>
+</td>
+<td>
+<%= auto.Año_fabricacion %>
+</td>
+<td>
+<%= auto.Rango %>
+</td>
+<td>
+<%= auto.Precio_por_dia %>
+</td>
+<td>
+<%= auto.Año_fabricacion %>
+</td>
+<td>
+<%= image_tag("auto2.jpg", height:50)%>
+</td>
+<td>
+<p> Arrendar <p>
+</td>
 
-  <p>
-    <strong>Rango:</strong>
-    <%= auto.Rango %>
-  </p>
 
-  <p>
-    <strong>Precio por dia:</strong>
-    <%= auto.Precio_por_dia %>
-  </p>
-
-  <p>
-    <strong>Año fabricacion:</strong>
-    <%= auto.Año_fabricacion %>
-  </p>
-
-  <p>
-    <strong>Marca:</strong>
-    <%= auto.marca_id %>
-  </p>
-
-  <p>
-    <strong>Carracteristica:</strong>
-    <%= auto.carracteristica_id %>
-  </p>
 
 </div>
+

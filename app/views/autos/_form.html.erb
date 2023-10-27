@@ -12,17 +12,17 @@
   <% end %>
 
   <div>
-    <%= form.label :modelo_de_auto, style: "display: block" %>
+    <%= form.label :modelo, style: "display: block" %>
     <%= form.text_field :modelo_de_auto %>
   </div>
-
+ 
   <div>
     <%= form.label :Rango, style: "display: block" %>
     <%= form.text_field :Rango %>
   </div>
 
   <div>
-    <%= form.label :Precio_por_dia, style: "display: block" %>
+    <%= form.label :Precio_dia, style: "display: block" %>
     <%= form.text_field :Precio_por_dia %>
   </div>
 
@@ -35,11 +35,12 @@
     <%= form.label :marca_id, style: "display: block" %>
     <%= form.text_field :marca_id %>
   </div>
-
   <div>
     <%= form.label :carracteristica_id, style: "display: block" %>
     <%= form.text_field :carracteristica_id %>
   </div>
+
+
 
   <div>
     <%= form.submit %>

@@ -4,6 +4,15 @@ class ApplicationController < ActionController::Base
     require 'pagy/extras/bootstrap'
     
     before_action :configure_permitted_parameters, if: :devise_controller?
+#usuario cliente
+before_action  only: %i[:index, :show ] do
+    authorize_request (["cliente", "admin"])
+  end
+  #usuario administrador
+  before_action  only: %i[:new, :edit, :create] do
+    authorize_request (["admin"])
+  end
+
     protected
     def configure_permitted_parameters
         devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :encrypted_password, :role])

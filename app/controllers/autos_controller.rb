@@ -1,9 +1,9 @@
 class AutosController < ApplicationController
-  before_action :set_auto, only: %i[ :show, :new, :edit, :create, :update, :destroy ]
+  before_action :set_auto, only: %i[ :index, :show, :new, :edit, :create, :update, :destroy ]
 
    #usuario cliente
    before_action only: [:index, :show] do
-    authorize_request(["cliente","admin"])
+    authorize_request(["cliente"])
   end 
   #usuario Administrador
   before_action only: [:show, :new, :edit, :create, :update, :destroy] do
@@ -19,11 +19,16 @@ class AutosController < ApplicationController
   # GET /autos/1 or /autos/1.json
   def show
     @autos = Auto.all
+    @marca = Marca.all
   end
 
   # GET /autos/new
   def new
     @auto = Auto.new
+    @bateria = Baterium.all
+    @marca = Marca.all
+    @tecnologia = Tecnologium.all
+    @carracteristica = Carracteristica.all
   end
 
   # GET /autos/1/edit

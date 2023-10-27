@@ -1,7 +1,5 @@
 class NosotrosController < ApplicationController
+  before_action :configure_permitted_parameters, if: :devise_controller?
   def index
-    if !user_signed_in?
-      redirect_to inicio_index_path
-    end
   end
 end
